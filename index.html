@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cia do Sorvete | Catalão-GO</title>
+<meta name="description" content="A vida é melhor com sorvete! Fabricação própria desde 1994. Av. Dr. Lamartine Pinto de Avelar, 1441 - Ipanema, Catalão-GO.">
+<meta name="theme-color" content="#ffd9e6">
+<link rel="icon" href="icone.png">
+<link rel="apple-touch-icon" href="icone.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cia do Sorvete | Catalão-GO">
+<meta property="og:description" content="A vida é melhor com sorvete! Fabricação própria desde 1994.">
+<meta property="og:image" content="https://raw.githubusercontent.com/pauloddev/ciadosorvete/main/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/pauloddev/ciadosorvete/main/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pink:#ee6fa0; --pink-d:#d94c85; --pink-l:#ffd6e5;
+  --blue:#4fb3e6; --blue-d:#2c8fc4;
+  --cream:#fff7f1; --ink:#6e2547;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{min-height:100%;background:#ffe9f1}
+body{min-height:100vh;font-family:'Nunito',sans-serif;color:var(--ink);overflow-x:hidden;display:flex;justify-content:center}
+
+/* Fundo: foto da loja com transparência (véu rosado) */
+.bg{position:fixed;inset:0;z-index:-3;background:#ffe9f1 url('fundo.jpg') 38% center/cover no-repeat;transform:scale(1.04);animation:drift 40s ease-in-out infinite alternate}
+@keyframes drift{to{transform:scale(1.09) translateX(-1.2%)}}
+.veil{position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(120% 60% at 50% 0%,rgba(255,236,244,.86) 0%,rgba(255,236,244,.55) 55%,rgba(255,236,244,0) 100%),
+    linear-gradient(180deg,rgba(255,226,238,.58) 0%,rgba(255,244,238,.66) 55%,rgba(255,226,238,.86) 100%)}
+#sprinkles{position:fixed;inset:0;z-index:-1;pointer-events:none}
+
+.wrap{width:100%;max-width:460px;padding:max(30px,env(safe-area-inset-top)) 22px max(28px,env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;text-align:center}
+
+/* Cabeçalho */
+.logo{width:min(215px,58vw);aspect-ratio:1/1;border-radius:50%;display:block;
+  box-shadow:0 0 0 6px rgba(255,255,255,.85),0 16px 40px rgba(217,76,133,.35);
+  opacity:0;animation:pop .9s .1s cubic-bezier(.2,1.3,.4,1) forwards, float 6s 1s ease-in-out infinite}
+@keyframes pop{from{opacity:0;transform:scale(.8) translateY(10px)}to{opacity:1;transform:none}}
+@keyframes float{50%{transform:translateY(-6px)}}
+
+.tag{margin-top:24px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:clamp(23px,6.6vw,29px);line-height:1.15;color:var(--pink-d);
+  text-shadow:0 2px 0 rgba(255,255,255,.9),0 4px 14px rgba(255,255,255,.7);opacity:0;animation:rise .8s .3s forwards}
+.since{margin-top:14px;display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:999px;
+  background:rgba(255,255,255,.82);border:1.5px solid rgba(238,111,160,.45);box-shadow:0 6px 18px rgba(217,76,133,.18);
+  font-family:'Fredoka',sans-serif;font-weight:500;font-size:14.5px;letter-spacing:.3px;color:var(--ink);opacity:0;animation:rise .8s .42s forwards}
+
+/* Botão principal */
+.cta{margin-top:26px;width:100%;height:66px;border-radius:20px;display:flex;align-items:center;justify-content:center;gap:12px;text-decoration:none;
+  font-family:'Fredoka',sans-serif;font-weight:600;font-size:19px;letter-spacing:.4px;color:#fff;position:relative;overflow:hidden;isolation:isolate;
+  background:linear-gradient(135deg,#f58bb5 0%,var(--pink-d) 100%);box-shadow:0 12px 28px rgba(217,76,133,.42),inset 0 -3px 0 rgba(0,0,0,.08);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;opacity:0;animation:rise .8s .55s forwards}
+.cta svg{width:26px;height:26px;fill:#fff;flex:none}
+.cta::after{content:"";position:absolute;top:0;left:-70%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:sweep 4.5s 1.6s infinite}
+@keyframes sweep{to{left:140%}}
+
+/* Cards (todos terminam na mesma linha) */
+.grid{margin-top:14px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:128px;padding:14px 10px;border-radius:20px;text-decoration:none;color:var(--ink);
+  background:rgba(255,255,255,.84);border:1.5px solid rgba(255,255,255,.95);box-shadow:0 10px 26px rgba(217,76,133,.18);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;opacity:0;animation:rise .8s forwards}
+.grid .card:nth-child(1){animation-delay:.68s}
+.grid .card:nth-child(2){animation-delay:.78s}
+.ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:var(--blue);box-shadow:0 6px 14px rgba(79,179,230,.4)}
+.ico svg{width:24px;height:24px;fill:#fff}
+.ico.pk{background:var(--pink);box-shadow:0 6px 14px rgba(238,111,160,.4)}
+.card b{font-family:'Fredoka',sans-serif;font-weight:600;font-size:16px;letter-spacing:.3px}
+.card small{font-size:12.5px;font-weight:700;opacity:.78;line-height:1.3}
+
+.status{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font-size:11.5px;font-weight:800;background:#e5f6ec;color:#1e7a47}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:#2fbf71;box-shadow:0 0 0 0 rgba(47,191,113,.6);animation:ping 1.8s infinite}
+.status.off{background:#fde6ea;color:#a8324f}.status.off::before{background:#e0526f;animation:none}
+@keyframes ping{70%{box-shadow:0 0 0 7px rgba(47,191,113,0)}100%{box-shadow:0 0 0 0 rgba(47,191,113,0)}}
+
+/* Endereço */
+.addr{margin-top:14px;width:100%;display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:20px;text-align:left;text-decoration:none;color:var(--ink);
+  background:rgba(255,255,255,.84);border:1.5px solid rgba(255,255,255,.95);box-shadow:0 10px 26px rgba(217,76,133,.18);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:transform .35s cubic-bezier(.2,.8,.2,1);opacity:0;animation:rise .8s .9s forwards}
+.addr .ico{flex:none}
+.addr b{display:block;font-family:'Fredoka',sans-serif;font-weight:600;font-size:16px;margin-bottom:2px}
+.addr span{font-size:13.5px;font-weight:700;line-height:1.4;opacity:.85}
+
+@media (hover:hover){
+  .cta:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(217,76,133,.5)}
+  .card:hover,.addr:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(217,76,133,.28)}
+}
+.cta:active,.card:active,.addr:active{transform:scale(.98)}
+.cta:focus-visible,.card:focus-visible,.addr:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+
+.label{margin:30px 0 14px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:15px;letter-spacing:.4px;color:var(--pink-d);text-shadow:0 1px 0 rgba(255,255,255,.9),0 2px 10px rgba(255,255,255,.8)}
+.gallery{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.gallery img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:20px;border:3px solid rgba(255,255,255,.92);box-shadow:0 10px 26px rgba(217,76,133,.22)}
+.foot{margin-top:26px;font-family:'Fredoka',sans-serif;font-weight:500;font-size:13.5px;color:var(--ink);opacity:0;animation:rise .8s 1.05s forwards;
+  text-shadow:0 1px 0 rgba(255,255,255,.9),0 2px 10px rgba(255,255,255,.8)}
+
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="veil"></div>
+<canvas id="sprinkles"></canvas>
+
+<main class="wrap">
+  <img class="logo" src="logo.png" alt="Cia do Sorvete">
+  <h1 class="tag">A vida é melhor com sorvete</h1>
+  <p class="since">🍨 Fabricação própria, desde 1994</p>
+
+  <a class="cta" target="_blank" rel="noopener" href="https://www.instagram.com/ciadosorvete.catalao">
+    <svg viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0122 7.5v9a5.5 5.5 0 01-5.5 5.5h-9A5.5 5.5 0 012 16.5v-9A5.5 5.5 0 017.5 2zm0 2A3.5 3.5 0 004 7.5v9A3.5 3.5 0 007.5 20h9a3.5 3.5 0 003.5-3.5v-9A3.5 3.5 0 0016.5 4zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm5.3-3.1a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg>
+    Siga no Instagram
+  </a>
+
+  <div class="grid">
+    <a class="card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Av.+Dr.+Lamartine+Pinto+de+Avelar+1441+Ipanema+Catal%C3%A3o+GO">
+      <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5.2 7 13 7 13s7-7.800 7-13a7 7 0 00-7-7zm0 9.500A2.500 2.500 0 1112 6.500a2.500 2.500 0 010 5z"/></svg></span>
+      <b>Como chegar</b>
+      <small>Abrir no mapa</small>
+    </a>
+    <div class="card" style="cursor:default">
+      <span class="ico pk"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 5v5.200l4 2.400-.8 1.300L11 13V7z"/></svg></span>
+      <b>Todos os dias</b>
+      <small>11:00 às 22:30</small>
+      <span class="status off" id="status">Verificando…</span>
+    </div>
+  </div>
+
+  <a class="addr" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Av.+Dr.+Lamartine+Pinto+de+Avelar+1441+Ipanema+Catal%C3%A3o+GO">
+    <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l9 8h-2.500v9h-5v-6h-3v6h-5v-9H3z"/></svg></span>
+    <div>
+      <b>Nossa loja</b>
+      <span>Av. Dr. Lamartine Pinto de Avelar, 1441<br>Bairro Ipanema, Catalão - GO, 75705-020</span>
+    </div>
+  </a>
+
+  <p class="label">Um pedacinho da nossa loja</p>
+  <div class="gallery">
+    <img src="foto1.jpg" alt="Placa da Cia do Sorvete" loading="lazy" width="800" height="1000">
+    <img src="foto2.jpg" alt="Neon: a vida é melhor com sorvete" loading="lazy" width="800" height="1000">
+    <img src="foto3.jpg" alt="Fachada e ombrelone da Cia do Sorvete" loading="lazy" width="800" height="1000">
+    <img src="foto4.jpg" alt="Neon de sorvete na loja" loading="lazy" width="800" height="1000">
+  </div>
+
+  <p class="foot">© Cia do Sorvete · Catalão-GO</p>
+</main>
+
+<script>
+/* Aberto/fechado (horário de Brasília, 11:00–22:30 todos os dias) */
+(()=>{
+  const el=document.getElementById('status');
+  const p=new Intl.DateTimeFormat('pt-BR',{timeZone:'America/Sao_Paulo',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+  const m=(+p.find(x=>x.type==='hour').value%24)*60+ +p.find(x=>x.type==='minute').value;
+  const open=m>=11*60&&m<22*60+30;
+  el.textContent=open?'Aberto agora':'Fechado agora';
+  el.className='status'+(open?'':' off');
+})();
+/* confeitos coloridos flutuando */
+(()=>{
+  const c=document.getElementById('sprinkles'),x=c.getContext('2d');let W,H;
+  const rs=()=>{W=c.width=innerWidth;H=c.height=innerHeight};rs();addEventListener('resize',rs);
+  const cols=['#ee6fa0','#4fb3e6','#ffd34d','#ffffff','#b79cf0'];
+  const P=Array.from({length:Math.min(26,Math.floor(innerWidth/22))},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,l:Math.random()*7+5,a:Math.random()*6.28,v:Math.random()*.3+.1,s:Math.random()*.012+.004,c:cols[Math.random()*cols.length|0],o:Math.random()*.3+.3}));
+  (function f(){
+    x.clearRect(0,0,W,H);
+    P.forEach(p=>{p.y-=p.v;p.a+=p.s;p.x+=Math.sin(p.a*2)*.25;if(p.y<-12){p.y=H+12;p.x=Math.random()*W}
+      x.save();x.translate(p.x,p.y);x.rotate(p.a);x.globalAlpha=p.o;x.fillStyle=p.c;
+      x.beginPath();x.roundRect(-p.l/2,-1.8,p.l,3.6,2);x.fill();x.restore()});
+    requestAnimationFrame(f)})();
+})();
+</script>
+</body>
+</html>
